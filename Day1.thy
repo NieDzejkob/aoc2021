@@ -4,10 +4,10 @@ theory Day1
     "HOL-Library.Code_Target_Numeral"
 begin
 
-definition increases :: "nat list \<Rightarrow> nat set" where
+definition increases :: "int list \<Rightarrow> nat set" where
   "increases xs = {i. xs ! i < xs ! Suc i \<and> Suc i < length xs}"
 
-fun count_increases :: "nat list \<Rightarrow> nat" where
+fun count_increases :: "int list \<Rightarrow> nat" where
   "count_increases [] = 0" |
   "count_increases [x] = 0" |
   "count_increases (x # y # ys) =
@@ -42,7 +42,7 @@ proof (induction xs rule: count_increases.induct)
     by (simp add: card_image)
 qed (auto simp: increases_def)
 
-fun count_increases' :: "nat list \<Rightarrow> nat \<Rightarrow> nat" where
+fun count_increases' :: "int list \<Rightarrow> nat \<Rightarrow> nat" where
   "count_increases' [] acc = acc" |
   "count_increases' [x] acc = acc" |
   "count_increases' (x # y # ys) acc =
@@ -52,13 +52,17 @@ lemma count_increases'_refine:
   "count_increases' xs acc = acc + count_increases xs"
   by (induction xs arbitrary: acc rule: count_increases.induct) auto
 
-fun part1 :: "nat list \<Rightarrow> nat" where
+fun part1 :: "int list \<Rightarrow> nat" where
   "part1 xs = count_increases' xs 0"
 
 theorem part1_correct:
   "part1 xs = card (increases xs)"
   by (simp add: count_increases'_refine count_increases_correct)
 
-export_code part1 in Haskell module_name Day1 file_prefix "day1"
+fun windows :: "int list \<Rightarrow> int list" where
+  "windows (a # b # c # xs) = (a + b + c) # windows (b # c # xs)" |
+  "windows _ = []"
+
+export_code part1 windows int_of_integer integer_of_nat in Haskell module_name Verified.Day1 file_prefix ""
 
 end
