@@ -32,8 +32,8 @@ part2 :: [Move] -> Integer
 part2 = (\(x, y, v) -> x * y) . foldl (flip go') (0, 0, 0)
 
 main = do
-  readInput "input/day2-example.txt" <&> part1 >>= print
-  readInput "input/day2.txt" <&> part1 >>= print
+  readInput "input-example.txt" <&> part1 >>= print
+  readInput "input.txt" <&> part1 >>= print
 
-  readInput "input/day2-example.txt" <&> part2 >>= print
-  readInput "input/day2.txt" <&> part2 >>= print
+  readInput "input-example.txt" <&> part2 >>= print
+  readInput "input.txt" <&> part2 >>= print

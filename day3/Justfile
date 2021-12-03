@@ -1,0 +1,7 @@
+run: build
+    ./day3 < input-example.txt; ./part2.sh input-example.txt
+    ./day3 < input.txt; ./part2.sh input.txt
+
+build:
+    nasm -g -felf64 day3.asm -o day3.o
+    ld day3.o -o day3

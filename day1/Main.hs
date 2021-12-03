@@ -10,5 +10,5 @@ runTest fname = do
   return $ (integer_of_nat (part1 input), integer_of_nat (part2 input))
 
 main = do
-  print =<< runTest "input/day1-example.txt"
-  print =<< runTest "input/day1.txt"
+  print =<< runTest "input-example.txt"
+  print =<< runTest "input.txt"
