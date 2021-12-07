@@ -8,3 +8,4 @@ Solutions to the Advent of Code 2021 puzzles.
  - [Day 4: Python](day4)
  - [Day 5: Factor](day5)
  - [Day 6: jq](day6)
+ - [Day 7: C](day7)
