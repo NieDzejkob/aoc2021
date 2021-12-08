@@ -9,3 +9,4 @@ Solutions to the Advent of Code 2021 puzzles.
  - [Day 5: Factor](day5)
  - [Day 6: jq](day6)
  - [Day 7: C](day7)
+ - [Day 8: Retina for part1, Pyth for part2](day8)
