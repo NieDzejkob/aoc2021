@@ -12,3 +12,5 @@ Solutions to the Advent of Code 2021 puzzles.
  - [Day 8: Retina for part1, Pyth for part2](day8)
  - [Day 9: Python](day9)
  - [Day 10: Zig](day10)
+ - [Day 11: Python](day11)
+ - [Day 12: Prolog](day12)
