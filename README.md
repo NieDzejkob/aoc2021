@@ -15,3 +15,5 @@ Solutions to the Advent of Code 2021 puzzles.
  - [Day 11: Python](day11) (placed on the global leaderboard - 46 / 42)
  - [Day 12: Prolog](day12)
  - [Day 13: Python](day13) (placed on the global leaderboard - 61 / 16)
+ - [Day 14: Python](day14)
+ - [Day 15: Rust](day15)
